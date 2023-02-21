@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Notas</title>
+    </head>
+
+    <style>
+        *{
+            padding: 20px
+        }
+    </style>
+    <body>
+      
+        <div>
+      <label for="examen1">EXAMEN 1:</label>
+      <input type="number" id="examen1" name="examen1" required
+      minlength="4" maxlength="8" size="10" onchange="execute1()">
+      
+      <label for="examen2">EXAMEN 2:</label>
+      <input type="number" id="examen2" name="examen2" required
+      minlength="4" maxlength="8" size="10"onchange="execute2()">
+    </div>
+
+
+    <div>
+        <label for="necesaria">NOTA NECESARIA PARA 50ptos:  </label>
+        <h1 id="necesaria"></h2>
+        <!-- <input type="number" id="necesaria" name="necesaria" required
+                minlength="4" maxlength="8" size="10" > -->
+    </div>
+  </body>
+    <script>
+        const examen1 = document.getElementById("examen1");
+        const examen2 = document.getElementById("examen2");
+        const textoNecesaria = document.getElementById("necesaria");
+
+
+        function execute1(){
+            examen2.value="";
+            textoNecesaria.textContent= (292.22222 - 2*examen1.value)/3;
+        }
+        
+        function execute2(){
+            examen1.value="";
+            textoNecesaria.textContent= (292.22222 - 3*examen2.value)/2;
+        }
+        
+        
+        
+        console.log("bleh");
+    </script>
+</html>
